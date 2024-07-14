@@ -7,16 +7,16 @@ def total_salary(path):
             for line in file:
                 parts = line.strip().split(',')
                 if len(parts) == 2:
-                    salary = int(parts[1])  # Convert salary to integer
+                    salary = int(parts[1])  
                     total_salary += salary
                     num_developers += 1
                 else:
-                    print(f"Skipping invalid line: {line}")
+                    print(f"Sk: {line}")
         
         if num_developers > 0:
-            average_salary = total_salary / num_developers
+            average_salary = total_salary // num_developers
         else:
-            average_salary = 0  # Prevent division by zero if there are no valid developers
+            average_salary = 0  
         
         return total_salary, average_salary
     
@@ -25,9 +25,9 @@ def total_salary(path):
     except Exception as e:
         print(f"Error reading file '{path}': {e}")
     
-    return 0, 0  # Return default values if there's an error
+    return 0, 0  
   
 
 path_to_file = (r"D:\Woolf\repositories\goit-pycore-hw-04\task_01\salary.txt")
 total, average = total_salary(path_to_file)
-print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата:{average}")
+print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
