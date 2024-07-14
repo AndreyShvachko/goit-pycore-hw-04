@@ -11,7 +11,7 @@ def total_salary(path):
                     total_salary += salary
                     num_developers += 1
                 else:
-                    print(f"Sk: {line}")
+                    print(f"Skipping invalid line: {line}")
         
         if num_developers > 0:
             average_salary = total_salary // num_developers
@@ -25,7 +25,7 @@ def total_salary(path):
     except Exception as e:
         print(f"Error reading file '{path}': {e}")
     
-    return 0, 0  
+    return 0, 0  # Return default values if there's an error
   
 
 path_to_file = (r"D:\Woolf\repositories\goit-pycore-hw-04\task_01\salary.txt")
